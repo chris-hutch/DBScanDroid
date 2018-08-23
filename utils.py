@@ -21,10 +21,10 @@ def get_feature_vector_hashes(data_split: str,
     ground_truth = np.loadtxt(ground_truth_dest, delimiter=",", skiprows=1, dtype=str)
 
     def _top_three_malware():
-        with open(data_split, mode='r') as split_1:
+        with open(data_split, mode='r') as data:
             feature_vector_hashes = []
 
-            for line in split_1:
+            for line in data:
                 if len(feature_vector_hashes) >= (128994 * percent_to_retrieve):
                     break
 
